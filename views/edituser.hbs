@@ -1,0 +1,69 @@
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">edit user</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+{{alert}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{{/if}}
+
+  {{#each row}}
+<form class="row g-3 needs-validation" method="post" action="/edituser/{{this.ID}}" >
+
+   <div class="col-6">
+
+
+    <div class="form-floating mb-3">
+    <input value="{{this.firstname}}" name="firstname" type="text" class="form-control" id="floatingInput" placeholder="firstname">
+    <label for="floatingInput">firstname</label>
+    </div>
+</div>    
+
+<div class="col-6">
+
+
+    <div class="form-floating mb-3">
+    <input value="{{this.lastName}}" name="lastname" type="text" class="form-control" id="floatingInput" placeholder="lastname">
+    <label for="floatingInput">lastname</label>
+    </div>
+</div>    
+
+
+
+<div class="col-6">
+
+
+    <div class="form-floating mb-3">
+    <input value="{{this.email}}" name="email" type="email" class="form-control" id="floatingInput" placeholder="email">
+    <label for="floatingInput">email</label>
+    </div>
+</div>    
+
+<div class="col-6">
+
+    <div class="form-floating mb-3">
+    <input value="{{this.phone}}" name="number" type="number" class="form-control" id="floatingInput" placeholder="phone">
+    <label for="floatingInput">phone</label>
+    </div>
+</div>   
+
+<div class="form-floating mb-6">
+    <input value="{{this.comment}}" name="comment" style="height: 150px;" type="text" class="form-control" id="floatingInput" placeholder="comment">
+    <label for="floatingInput">comment</label>
+
+    </div>
+
+<div class="col-12 d-gird">
+    <button class="btn btn-primary" type="submit" >change</button>
+
+</div>
+
+
+
+</form>
+{{/each}}
